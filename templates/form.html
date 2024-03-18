@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+            <form action="new" method="post">
+
+            <div class="container">
+
+                <h1>Add A New Student</h1>
+                <h6>Fill the form below to generate a qr code.</h6>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form-control"
+                    placeholder=""
+                    aria-describedby="helpId"
+                />
+                <small id="helpId" class="text-muted">Help text</small>
+            </div>
+            
+            <div class="mb-3">
+                <label for="" class="form-label">Age</label>
+                <input
+                    type="number"
+                    name="age"
+                    id=""
+                    class="form-control"
+                    placeholder=""
+                    aria-describedby="helpId"
+                />
+                <small id="helpId" class="text-muted">Help text</small>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Class</label>
+                <input
+                    type="text"
+                    name="studentclass"
+                    id="class"
+                    class="form-control"
+                    placeholder=""
+                    aria-describedby="helpId"
+                />
+                <small id="helpId" class="text-muted">Help text</small>
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Submit
+            </button>
+            
+
+        </div>
+    </form>
+
+
+    {% endblock %}

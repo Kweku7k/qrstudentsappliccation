@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+
+
+<h4>Students</h4>
+                    <h6>All the student on the list.</h6>
+                    <br/>                   
+
+                    {% for student in students %}
+                    <a href="{{url_for('qr', id=student.id)}}">
+                        <div class="card mb-3">
+                            <h4>{{student.name}}</h4>
+                            <h4>{{student.time}}</h4>
+                            <a href="{{url_for('delete', id=student.id)}}">Delete</a>
+                        </div>
+                    </a>
+                    {% endfor %}
+</div>
+                
+
+{% endblock %}

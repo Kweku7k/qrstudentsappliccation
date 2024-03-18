@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <h4>Logs</h4>
+                    <h6>Logs for when students arrived and scanned thier respective codes.</h6>
+                    <br/>
+
+                    {% for log in logs %}
+                        <div class="card mb-3">
+                            <h4>{{log.name}}</h4>
+                            <h4>{{log.time}}</h4>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+
+                    <h4>Students</h4>
+                    <h6>All the student on the list.</h6>
+                    <br/>
+
+                    {% for student in students %}
+                    <a href="{{url_for('qr', id=student.id)}}">
+                        <div class="card mb-3" >
+                            <h4>Name: {{student.name}}</h4>
+                            <h4>Age: {{student.age}}</h4>
+                            <h4>Class: {{student.studentclass}}</h4>
+                        </div>
+                    </a>
+                    
+                    {% endfor %}
+                    </div>
+                    
+                </div>
+            </div>
+
+            {% endblock %}
+
+
+       
+
+
+

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+
+<h4>Logs</h4>
+                    <h6>Logs for when students arrived and scanned thier respective codes.</h6>
+                    <br/>
+
+                    {% for log in logs %}
+                        <div class="card mb-3">
+                            <h4>{{log.name}}</h4>
+                            <h4>{{log.time}}</h4>
+                        </div>
+                    {% endfor %}
+</div>
+                
+
+{% endblock %}
