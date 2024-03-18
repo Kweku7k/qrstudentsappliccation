@@ -80,7 +80,7 @@ def new():
         # id = newentry.id
         db.session.add(newentry)
         db.session.commit()
-        
+
         createQrCode(newentry.id)
         notify(adminemail, f'NEW STUDENT: {newentry.name}', f'A user account has been created for {newentry} ')
 
@@ -124,4 +124,4 @@ def delete(id):
 
 if __name__ == '__main__':
     #DEBUG is SET to TRUE. CHANGE FOR PROD
-    app.run(port=5000,debug=True)
+    app.run(port=5000, host='0.0.0.0', debug=True)
