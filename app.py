@@ -78,10 +78,11 @@ def new():
         form = request.form
         newentry = StudentData(name=form['name'], studentclass=form['studentclass'], age = form['age'])
         # id = newentry.id
-        createQrCode(newentry.name)
-        notify(adminemail, f'NEW STUDENT: {newentry.name}', f'A user account has been created for {newentry} ')
         db.session.add(newentry)
         db.session.commit()
+        
+        createQrCode(newentry.id)
+        notify(adminemail, f'NEW STUDENT: {newentry.name}', f'A user account has been created for {newentry} ')
 
         return redirect(url_for('home'))
     return render_template('form.html')
